@@ -463,6 +463,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("quickConsultForm");
   const iframe = document.getElementById("hidden_iframe");
   const submitBtn = document.querySelector(".quick-form__submit");
+  const openPolicyLink = document.getElementById("openPolicyLink");
+const policyDetailModal = document.getElementById("policyDetailModal");
+const closePolicyDetailModal = document.getElementById("closePolicyDetailModal");
+const confirmPolicyDetailModal = document.getElementById("confirmPolicyDetailModal");
 
   if (!form || !iframe) return;
 
@@ -488,6 +492,35 @@ document.addEventListener("DOMContentLoaded", function () {
       submitBtn.disabled = false;
       submitBtn.textContent = "최대 혜택 상담 신청";
     }
+    function closeDetailModal() {
+  if (policyDetailModal) {
+    policyDetailModal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+}
+
+if (openPolicyLink && policyDetailModal) {
+  openPolicyLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    policyDetailModal.style.display = "block";
+    document.body.style.overflow = "hidden";
+  });
+}
+
+if (closePolicyDetailModal) {
+  closePolicyDetailModal.addEventListener("click", closeDetailModal);
+}
+
+if (confirmPolicyDetailModal) {
+  confirmPolicyDetailModal.addEventListener("click", closeDetailModal);
+}
+
+if (policyDetailModal) {
+  const backdrop = policyDetailModal.querySelector(".policy-detail-modal__backdrop");
+  if (backdrop) {
+    backdrop.addEventListener("click", closeDetailModal);
+  }
+}
   });
 });
 </script>
