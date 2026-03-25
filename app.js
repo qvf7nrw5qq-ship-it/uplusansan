@@ -434,6 +434,7 @@ function closeImageModal() {
   const oldModal = document.getElementById("runtimeImageModal");
   if (oldModal) oldModal.remove();
 }
+
 const quickPolicyBtn = document.getElementById('quickPolicyBtn');
 const consentModal = document.getElementById('consentModal');
 
