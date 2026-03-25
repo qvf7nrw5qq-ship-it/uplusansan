@@ -430,17 +430,3 @@ function openImageModal(imageSrc) {
   document.body.appendChild(overlay);
 }
 
-function closeImageModal() {
-  const oldModal = document.getElementById("runtimeImageModal");
-  if (oldModal) oldModal.remove();
-}
-
-const quickPolicyBtn = document.getElementById('quickPolicyBtn');
-const consentModal = document.getElementById('consentModal');
-
-if (quickPolicyBtn && consentModal) {
-  quickPolicyBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    consentModal.setAttribute('aria-hidden', 'false');
-  });
-}
