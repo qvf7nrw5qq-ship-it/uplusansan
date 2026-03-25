@@ -436,5 +436,5 @@ function closeImageModal() {
 }
 document.getElementById('quickPolicyBtn')?.addEventListener('click', function(e) {
   e.preventDefault();
-  document.getElementById('consentModal')?.setAttribute('aria-hidden', 'false');
+  openConsent(null);
 });
