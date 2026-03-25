@@ -434,3 +434,7 @@ function closeImageModal() {
   const oldModal = document.getElementById("runtimeImageModal");
   if (oldModal) oldModal.remove();
 }
+document.getElementById('quickPolicyBtn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('consentModal')?.setAttribute('aria-hidden', 'false');
+});
