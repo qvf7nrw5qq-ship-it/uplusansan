@@ -430,3 +430,7 @@ function openImageModal(imageSrc) {
   document.body.appendChild(overlay);
 }
 
+function closeImageModal() {
+  const oldModal = document.getElementById("runtimeImageModal");
+  if (oldModal) oldModal.remove();
+}
