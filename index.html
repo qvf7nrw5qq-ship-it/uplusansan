@@ -492,34 +492,7 @@ const confirmPolicyDetailModal = document.getElementById("confirmPolicyDetailMod
       submitBtn.disabled = false;
       submitBtn.textContent = "최대 혜택 상담 신청";
     }
-    function closeDetailModal() {
- const openPolicyLink = document.getElementById("openPolicyLink");
-const policyModal = document.getElementById("policyModal");
-const policyClose = document.getElementById("policyClose");
-const policyBackdrop = document.getElementById("policyBackdrop");
-
-if (openPolicyLink && policyModal) {
-  openPolicyLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    policyModal.style.display = "block";
-    document.body.style.overflow = "hidden";
-  });
-}
-
-function closePolicy() {
-  if (policyModal) {
-    policyModal.style.display = "none";
-    document.body.style.overflow = "";
-  }
-}
-
-if (policyClose) {
-  policyClose.addEventListener("click", closePolicy);
-}
-
-if (policyBackdrop) {
-  policyBackdrop.addEventListener("click", closePolicy);
-}
+  
 });
 </script>
 </body>
