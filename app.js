@@ -434,37 +434,3 @@ function closeImageModal() {
   const oldModal = document.getElementById("runtimeImageModal");
   if (oldModal) oldModal.remove();
 }
-const openPolicyLink = document.getElementById('openPolicyLink');
-const policyDetailModal = document.getElementById('policyDetailModal');
-const closePolicyDetailModal = document.getElementById('closePolicyDetailModal');
-const confirmPolicyDetailModal = document.getElementById('confirmPolicyDetailModal');
-
-function closeDetailModal() {
-  if (policyDetailModal) {
-    policyDetailModal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-}
-
-if (openPolicyLink && policyDetailModal) {
-  openPolicyLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    policyDetailModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  });
-}
-
-if (closePolicyDetailModal) {
-  closePolicyDetailModal.addEventListener('click', closeDetailModal);
-}
-
-if (confirmPolicyDetailModal) {
-  confirmPolicyDetailModal.addEventListener('click', closeDetailModal);
-}
-
-if (policyDetailModal) {
-  const backdrop = policyDetailModal.querySelector('.policy-detail-modal__backdrop');
-  if (backdrop) {
-    backdrop.addEventListener('click', closeDetailModal);
-  }
-}
